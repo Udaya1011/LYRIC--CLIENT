@@ -176,20 +176,6 @@ button:hover {
   flex-wrap: wrap;  /* Allow buttons to wrap on smaller screens */
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  background-color: #0ff;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0ff;
-}
-
 @media (max-width: 768px) {
   .button-container {
     flex-direction: column;
