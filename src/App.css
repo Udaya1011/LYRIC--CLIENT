@@ -1,0 +1,210 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #0d0d0d 0%, #000000 100%);
+  font-family: 'Orbitron', sans-serif;
+  color: #00f0ff;
+  overflow-x: hidden;
+}
+
+/* Neon glowing title */
+.title {
+  font-size: 3rem;
+  text-align: center;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #00e1ff, 0 0 40px #00e1ff;
+  margin: 30px 0;
+  animation: flicker 3s infinite alternate;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+  50% { opacity: 0.6; text-shadow: 0 0 2px #0ff, 0 0 5px #0ff; }
+}
+
+/* Responsive container box */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid #00f0ff;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #00f0ff;
+  padding: 30px;
+  transition: 0.3s ease-in-out;
+  backdrop-filter: blur(8px);
+}
+
+input, textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #111;
+  color: #0ff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: #00f0ff;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0ff;
+  color: #111;
+  transform: scale(1.05);
+}
+
+/* Song Cards */
+.song-card {
+  background: #0a0a0a;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 15px #00f0ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.song-card:hover {
+  background: #1a1a1a;
+  transform: scale(1.02);
+}
+
+/* Lyrics Effect */
+.lyrics-display {
+  font-family: 'Courier New', Courier, monospace;
+  background: #000000;
+  padding: 20px;
+  border-radius: 15px;
+  white-space: pre-wrap;
+  color: #00f0ff;
+  animation: lyricColorCycle 6s ease-in-out infinite;
+}
+
+/* Animated lyric color cycle with additional colors */
+@keyframes lyricColorCycle {
+  0% { color: #00f0ff; text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+  20% { color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 15px #ff00ff; }
+  40% { color: #ffff00; text-shadow: 0 0 10px #ffff00, 0 0 15px #ffff00; }
+  60% { color: #00ff00; text-shadow: 0 0 10px #00ff00, 0 0 15px #00ff00; }
+  80% { color: #ff5733; text-shadow: 0 0 10px #ff5733, 0 0 15px #ff5733; }
+  100% { color: #00f0ff; text-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff; }
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  input, textarea {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* User display card */
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.user-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00f0ff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00f0ff;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.user-card:hover {
+  transform: scale(1.05);
+  background-color: #111;
+}
+
+.user-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #00f0ff;
+  box-shadow: 0 0 10px #0ff;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  color: #0ff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #0ff;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;  /* Space between buttons */
+  margin-top: 20px;
+  flex-wrap: wrap;  /* Allow buttons to wrap on smaller screens */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #0ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0ff;
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
